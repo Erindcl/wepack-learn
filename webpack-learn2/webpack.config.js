@@ -20,6 +20,12 @@ module.exports = {
             test: /\.css$/,
             loader: 'style-loader!css-loader?importLoaders=1!postcss-loader' // 此处表示使用了两个loader 用'!'分隔 注意写的顺序 打包的时候是从右向左使用loader的
                 // loaders: ['style-loader','css-loader','postcss-loader']  使用这种形式和上面的形式作用是一样的
+        }, {
+            test: /\.less$/,
+            loader: 'style-loader!css-loader!postcss-loader!less-loader'
+        }, {
+            test: /\.scss$/,
+            loader: 'style-loader!css-loader!postcss-loader!sass-loader'
         }]
     },
     plugins: [
