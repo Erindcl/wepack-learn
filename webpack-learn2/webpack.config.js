@@ -18,23 +18,15 @@ module.exports = {
             }
         }, {
             test: /\.css$/,
-            loader: 'style-loader!css-loader!postcss-loader' // 此处表示使用了两个loader 用'!'分隔 注意写的顺序 打包的时候是从右向左使用loader的
+            loader: 'style-loader!css-loader?importLoaders=1!postcss-loader' // 此处表示使用了两个loader 用'!'分隔 注意写的顺序 打包的时候是从右向左使用loader的
                 // loaders: ['style-loader','css-loader','postcss-loader']  使用这种形式和上面的形式作用是一样的
         }]
     },
-    // postcss: [
-    //     require('autoprefixer')({ // 使用autoprefixer插件为css属性添加前缀
-    //         browsers: ['last 5 versions'] // 插件中参数定义添加前缀为浏览器近期五个版本
-    //     })
-    // ],
     plugins: [
         new htmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html',
             inject: 'body'
-        }),
-        require('autoprefixer')({ // 使用autoprefixer插件为css属性添加前缀
-            browsers: ['last 5 versions'] // 插件中参数定义添加前缀为浏览器近期五个版本
         })
     ]
 }
