@@ -11,6 +11,8 @@ babel-loader 转换ES6等代码
 # css文件中利用@import ‘路径’引入了其他文件的css块
 # 使用less-loader处理less文件
 # 使用sass-loader处理scss文件
+
+处理项目中的资源文件
 # 使用html-loader处理webpack中的HTML模板
 # 使用ejs-loader处理webpack中的tpl模板 
 # 使用file-loader和url-loader进行图片文件的打包
@@ -21,4 +23,4 @@ babel-loader 转换ES6等代码
 ```
 
 
-实践过程记录见我的博客： [传送门](https://blog.csdn.net/m0_37747665).
+实践过程记录见我的博客： [传送门](https://blog.csdn.net/m0_37747665/article/details/82744013).
