@@ -567,7 +567,9 @@ var _layer2 = _interopRequireDefault(_layer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
-    console.log(_layer2.default);
+    var dom = document.getElementById('app');
+    var layer = new _layer2.default();
+    dom.innerHTML = layer.tpl;
 };
 
 new App();
@@ -819,16 +821,29 @@ exports.push([module.i, ".layer {\n  width: 600px;\n  height: 200px;\n  backgrou
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-// import './layer.less';
+
+var _layer = __webpack_require__(10);
+
+var _layer2 = _interopRequireDefault(_layer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// 这样引入将模板中的代码作为字符串处理
 
 function layer() {
     return {
         name: 'layer',
-        tpl: '<div class="layer">\n        <div>this is a layer</div>\n    </div>'
+        tpl: _layer2.default
     };
 }
 
 exports.default = layer;
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"layer\">\r\n    <div>this is a layer</div>\r\n</div>";
 
 /***/ })
 /******/ ]);
