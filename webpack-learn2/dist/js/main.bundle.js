@@ -560,7 +560,7 @@ __webpack_require__(3);
 
 __webpack_require__(7);
 
-var _layer = __webpack_require__(9);
+var _layer = __webpack_require__(11);
 
 var _layer2 = _interopRequireDefault(_layer);
 
@@ -804,18 +804,47 @@ if(false) {
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(9);
 exports = module.exports = __webpack_require__(0)(false);
 // imports
 
 
 // module
-exports.push([module.i, ".layer {\n  width: 600px;\n  height: 200px;\n  background: green;\n}\n.layer · > div {\n  width: 400px;\n  height: 100px;\n  background: red;\n}\n", ""]);
+exports.push([module.i, ".layer {\n  width: 600px;\n  height: 200px;\n  background: url(" + escape(__webpack_require__(10)) + ");\n}\n.layer · > div {\n  width: 400px;\n  height: 100px;\n  background: red;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
+}
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/bg-7783b.jpg";
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -825,7 +854,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _layer = __webpack_require__(10);
+var _layer = __webpack_require__(12);
 
 var _layer2 = _interopRequireDefault(_layer);
 
@@ -843,15 +872,17 @@ function layer() {
 exports.default = layer;
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports) {
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = function (obj) {
 obj || (obj = {});
 var __t, __p = '', __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<div class="layer">\r\n    <h1>study hard! my name is\r\n        ' +
+__p += '<div class="layer">\r\n    <img src="' +
+((__t = ( __webpack_require__(13) )) == null ? '' : __t) +
+'"/>\r\n    <h1>study hard! my name is\r\n        ' +
 ((__t = ( name )) == null ? '' : __t) +
 '\r\n    </h1>\r\n    ';
  for (var i = 0; i  < arr.length ; i++) { ;
@@ -864,6 +895,12 @@ __p += '\r\n</div>';
 }
 return __p
 }
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/hp-b6793.jpg";
 
 /***/ })
 /******/ ]);

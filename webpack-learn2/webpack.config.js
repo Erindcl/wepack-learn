@@ -32,6 +32,19 @@ module.exports = {
         }, {
             test: /\.tpl$/,
             loader: 'ejs-loader'
+        }, {
+            test: /\.(png|jpg|gif|svg)$/i,
+            loader: 'file-loader',
+            query: {
+                // 设置打包后的文件名：目录下文件名-哈希5位.后缀名
+                name: 'assets/[name]-[hash:5].[ext]'
+            }
+        }, {
+            test: /\.(png|jpg|gif|svg)$/i,
+            loaders: [
+                'url-loader?limit=1000&name=assets/[name]-[hash:5].[ext]', // 一些参数的设置可以采用查询字符串的形式进行设置
+                'image-webpack-loader'
+            ]
         }]
     },
     plugins: [
