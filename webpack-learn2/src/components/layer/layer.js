@@ -1,9 +1,9 @@
-import tpl from './layer.html'; // 这样引入将模板中的代码作为字符串处理
+import tpl from './layer.tpl'; // 此处将模板导入 导入的是模板编译后形成的一个函数
 
 function layer() {
     return {
         name: 'layer',
-        tpl: tpl
+        tpl: tpl // 此处的tpl为一个函数
     }
 }
 

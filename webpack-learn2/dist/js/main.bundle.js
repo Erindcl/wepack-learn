@@ -569,7 +569,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var App = function App() {
     var dom = document.getElementById('app');
     var layer = new _layer2.default();
-    dom.innerHTML = layer.tpl;
+    dom.innerHTML = layer.tpl({
+        name: 'xiaohe',
+        arr: ['oppo', 'huawei', 'xiaomi']
+    }); // 向函数中传入了参数 供其在模板中使用
 };
 
 new App();
@@ -828,12 +831,12 @@ var _layer2 = _interopRequireDefault(_layer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// 这样引入将模板中的代码作为字符串处理
+// 此处将模板导入 导入的是模板编译后形成的一个函数
 
 function layer() {
     return {
         name: 'layer',
-        tpl: _layer2.default
+        tpl: _layer2.default // 此处的tpl为一个函数
     };
 }
 
@@ -843,7 +846,24 @@ exports.default = layer;
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"layer\">\r\n    <div>this is a layer</div>\r\n</div>";
+module.exports = function (obj) {
+obj || (obj = {});
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+__p += '<div class="layer">\r\n    <h1>study hard! my name is\r\n        ' +
+((__t = ( name )) == null ? '' : __t) +
+'\r\n    </h1>\r\n    ';
+ for (var i = 0; i  < arr.length ; i++) { ;
+__p += '\r\n        ' +
+((__t = ( arr[i] )) == null ? '' : __t) +
+'\r\n            ';
+ } ;
+__p += '\r\n</div>';
+
+}
+return __p
+}
 
 /***/ })
 /******/ ]);
