@@ -1,6 +1,6 @@
 ## wepack学习实践
 
-``` 
+``` bash
 
 安装webpack
 
@@ -10,7 +10,7 @@
 
 自动化生产项目中的HTML文件
 
-babel-loader 转换ES6代码
+babel-loader 转换ES6等代码
 
 处理项目中的CSS 
 # 使用css-loader和style-loader 打包css样式并动态的添加到html-head-style标签中
@@ -18,6 +18,8 @@ babel-loader 转换ES6代码
 # css文件中利用@import ‘路径’引入了其他文件的css块
 # 使用less-loader处理less文件
 # 使用sass-loader处理scss文件
+
+处理项目中的资源文件
 # 使用html-loader处理webpack中的HTML模板
 # 使用ejs-loader处理webpack中的tpl模板 
 # 使用file-loader和url-loader进行图片文件的打包
